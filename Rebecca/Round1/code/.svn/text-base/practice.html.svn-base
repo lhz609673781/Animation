@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>practice_1</title>
+	<link rel="stylesheet" type="text/css" href="practice.css">
+</head>
+<body>
+	<div id="content">
+		<div class="first_container">
+			<img src="img/bg_1.jpg" class="bg">
+			<img src="img/logo.png" class="logo fir_copy">
+			<img src="img/copy_Capital_1.png" class="Capital fir_copy">
+			<img src="img/copy_Capital_2.png" class="Customer fir_copy">
+			<img src="img/copy_lets_1.png" class="let sec_copy">
+			<img src="img/copy_lets_2.png" class="family sec_copy">
+		</div>
+		<div class="final_container">
+			<img src="img/w_logo.png" class="logo_final">
+			<img src="img/copy_final_1.png" class="final_Capital final_title">
+			<img src="img/copy_final_2.png" class="final_Customer final_title"> 
+
+			<img src="img/copy_with_1.png" class="with final_copy"> 
+			<img src="img/copy_with_2.png" class="to_better final_copy"> 
+			<img src="img/copy_with_3.png" class="to_keep final_copy"> 
+			
+			<div class="cta">
+				<img src="img/btn.png" class="normal">
+				<img src="img/btn_hover.png" class="active">
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src='jquery.min.js'></script>
+	<script type="text/javascript" src='TweenMax.min.js'></script>
+	<script type="text/javascript" src='practice.js'></script>
+</body>
+</html>

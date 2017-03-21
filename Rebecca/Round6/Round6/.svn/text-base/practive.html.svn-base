@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>practice</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.content{
+			width: 300px;
+			height: 250px;
+			background-color: #000;
+			position: relative;
+			cursor:pointer;
+			/*background: url(7.jpg) no-repeat;*/
+		}
+		img{
+			width: 100%;
+		}
+		.firstFrame,.fifthFrame{
+			width: 215px;
+			height: 46px;
+			position: absolute;
+			top: 47%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			-webkit-transform: translate(-50%,-50%);
+			-moz-transform: translate(-50%,-50%);
+			-ms-transform: translate(-50%,-50%);
+			-o-transform: translate(-50%,-50%);
+		}
+		.line,.line_box{
+			width: 0%;
+			height: 100%;
+			text-align: center;
+			overflow: hidden;
+			position: absolute;
+		}
+		.top_line,.bottom_line{
+			width: 215px;
+			height: 4px;
+			background: #fff;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			-webkit-transform: translateY(-50%);
+			-moz-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			-o-transform: translateY(-50%);
+		}
+		.new_copy,.sop_copy{
+			width: 121px;
+			position: absolute;
+			top: 56%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			-webkit-transform: translate(-50%,-50%);
+			-moz-transform: translate(-50%,-50%);
+			-ms-transform: translate(-50%,-50%);
+			-o-transform: translate(-50%,-50%);
+			opacity: 0;
+			visibility: hidden;
+		}
+		.sop_cop{
+			width: 155px;
+		}
+		.new_copy>img{
+			width: 100%;
+		}
+		.logo{
+			position: absolute;
+			width: 30%;
+			left: 13px;
+			bottom: 12px;
+			opacity: 0;
+			visibility: hidden;
+		}
+		.cta{
+			position: absolute;
+			width: 30%; 
+			right: 13px;
+			bottom: 12px;
+			opacity: 0;
+			visibility: hidden;
+		}
+		.cta_active{
+			position: absolute;
+			width: 100%;
+			top: 0px;
+			left: 0px;
+			opacity: 0;
+			visibility: hidden;
+		}
+		.secondFrame,.sixthFrame{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+		.blue_car{
+			width: 100%;
+			height: 100%;
+			position: relative;
+			background-repeat: no-repeat;
+			opacity: 0;
+			visibility: hidden;
+		}
+		.thirdFrame{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+		}
+		.RX_copy{
+			width: 40%;
+			position: absolute;
+			top: 51%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			-webkit-transform: translate(-50%,-50%);
+			-moz-transform: translate(-50%,-50%);
+			-ms-transform: translate(-50%,-50%);
+			-o-transform: translate(-50%,-50%);
+			opacity: 0;
+			visibility: hidden;
+		}
+		.RX_copy>img{
+			width: 100%;
+		}
+		.forthFrame{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0%;
+			top:0%;
+			opacity: 0; 
+			visibility: hidden;
+		}
+		.white_car{
+			width: 100%;
+			left: 0%;
+			top: 10px;
+			transform: translateX(-5%);
+			-webkit-transform: translateX(-5%);
+			transform: translateX(-5%);
+			transform: translateX(-5%);
+			transform: translateX(-5%);
+		}
+		.white_car>img{
+			width: 100%;
+		}
+		.top_line_five,.bottom_line_five{
+			width: 215px;
+			height: 4px;
+			background: #fff;
+			position: absolute;
+		}
+		.top_line_five{
+			top: 0%;
+		}
+		.bottom_line_five{
+			bottom: 0%;
+		}
+		.sharp_copy{
+			width: 38%;
+			position: absolute;
+			top: 48%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			-webkit-transform: translate(-50%,-50%);
+			-moz-transform: translate(-50%,-50%);
+			-ms-transform: translate(-50%,-50%);
+			-o-transform: translate(-50%,-50%);
+			opacity: 0;
+			visibility: hidden;
+		}
+		.seventhFrame{
+			width: 100%;
+			height: 100%;
+			top: 0px;
+			left: 0px;
+			position: absolute;
+			background-repeat: no-repeat;
+			opacity: 0;
+			visibility: hidden;
+		}
+		.book_copy{
+			width: 61%;
+			position: absolute;
+			left: 3%;
+			top: 5%;
+		}
+		.wh_line_box{
+			width: 0%;
+			position: absolute;
+			left: 4%;
+			top: 16%;
+			overflow: hidden;
+		}
+		.wh_line{
+			width: 180px;
+			height: 1px;
+			background-color: #fff;
+		}
+		.Options_copy{
+			width: 18%;
+			position: absolute;
+			right: 4%;
+			bottom: 0%;
+			opacity: 0;
+			visibility: hidden;
+		}
+	</style>
+	<script type="text/javascript" src='jquery.min.js'></script>
+	<script type="text/javascript" src='TweenMax.min.js'></script>
+</head>
+<body>
+	<div class="content">
+		<div class="firstFrame">
+			<div class="line">
+				<div class="top_line"></div>
+				<div class="bottom_line"></div>
+			</div>
+			<div class="preload new_copy" data-source='img/NEW-copy.png'></div>
+		</div>
+		
+		<div class="secondFrame">
+			<div class="preload blue_car" data-source='img/car_bg.jpg' data-type='bg'></div>
+		</div>
+
+		<div class="thirdFrame">
+			<div class="preload RX_copy" data-source='img/RX-copy.png'></div>
+		</div>
+
+		<div class="forthFrame preload" data-source='img/bg_4.jpg' data-type='bg'>
+			<div class="preload white_car" data-source='img/white_car.png'></div>
+		</div>
+
+		<div class="fifthFrame">
+			<div class="line_box">
+				<div class="top_line_five"></div>
+				<div class="bottom_line_five"></div>
+			</div>
+			<div class="preload sop_copy" data-source='img/SOPHISTICATION.png'></div>
+		</div>
+
+		<div class="sixthFrame">
+			<div class="preload sharp_copy" data-source='img/SHARPENED.png'></div>
+		</div>
+
+		<div class="seventhFrame preload" data-source='img/bg_final.jpg' data-type='bg'>
+			<div class="wh_line_box">
+				<div class="wh_line"></div>
+			</div>
+			<div class="preload book_copy" data-source='img/Headline Book.png'></div>
+			<div class="preload Options_copy" data-source='img/Options_shown.png'></div>
+		</div>
+
+		<div class="preload logo" data-source='img/Lexus Logo.png'></div>
+		<div class="cta">
+			<div class="cta_normal preload" data-source='img/cta.png'></div>
+			<div class="cta_active preload" data-source='img/cta－hover.png'></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function preloadImg(){
+			$('.preload').each(function(i,a){
+				var $this = $(this);
+				var src = $this.data('source');
+
+				if ($this.data('type') == 'bg') {
+					$this.css({'background-image':'url('+src+')'});
+				}else{
+					var img = $('<img>').attr({
+						src:src,
+						alt:'图片'
+					});
+
+					$this.append(img);
+				}
+			})
+		}
+
+		function initAnim(){
+			var tl = new TimelineLite();
+			tl.to('.line',.5,{'width':'100%',ease:Sine.easeOut})
+			  .to('.top_line',.5,{'top':'0px',y:'0%',z:0.001,ease:Sine.easeInOut})
+			  .to('.bottom_line',.5,{'bottom':'0px',y:'0%',top:'auto',z:0.001,ease:Sine.easeInOut},'-=0.5')
+			  .to('.new_copy',.5,{autoAlpha:1},'-=0.35')
+			  .staggerTo(['.logo','.cta'],0.4,{autoAlpha:1},0.2)
+			  .to('.line',0.8,{'width':'0%','right':'0%',delay:1,ease:Sine.easeIn})
+			  .to('.new_copy',0.5,{autoAlpha:0},'-=0.3')
+
+			  .to('.blue_car',.4,{autoAlpha:1},'-=0.2')
+			  .to('.blue_car',.3,{'background-position':'50%',z:0.001,ease:Sine.easeInOut})
+			  .to('.blue_car',.4,{autoAlpha:0,ease:Sine.easeIn},'+=1')
+
+			  .to('.RX_copy',.4,{autoAlpha:1},'-=0.4')
+			  .to('.RX_copy',.4,{autoAlpha:0},'+=1')
+
+			  .to('.forthFrame',.5,{autoAlpha:1},'-=0.5')
+			  .to('.white_car',.5,{x:0,ease:Sine.easeInOut})
+			  .to('.forthFrame',.5,{autoAlpha:0},'+=1')
+
+			  .to('.line_box',.5,{'width':'100%',ease:Sine.easeOut})
+			  .to('.sop_copy',.5,{autoAlpha:1},'-=0.35')
+			  .to('.top_line_five',.5,{'top':'50%',y:'-50%',z:0.001,delay:1,ease:Sine.easeInOut})
+			  .to('.bottom_line_five',.5,{'bottom':'50%',y:'-50%',z:0.001,ease:Sine.easeInOut},'-=0.5')
+			  .to('.sop_copy',.5,{autoAlpha:0},'-=0.5')
+
+			  .to('.top_line_five',.5,{'top':'0%',y:'0%',z:0.001,ease:Sine.easeInOut})
+			  .to('.bottom_line_five',.5,{'bottom':'0%',y:'0%',z:0.001,ease:Sine.easeInOut},'-=0.5')
+			  .to('.sharp_copy',.5,{autoAlpha:1})
+			  .to('.line_box',0.8,{'width':'0%','right':'0%',delay:1,ease:Sine.easeIn})
+			  .to('.sharp_copy',.5,{autoAlpha:0},'-=0.3')
+
+			  .to('.seventhFrame',0.5,{autoAlpha:1})
+			  .to('.book_copy',0.5,{autoAlpha:1})
+			  .to('.wh_line_box',0.5,{'width':'60%',ease:Sine.easeOut})
+			  .to('.Options_copy',0.5,{autoAlpha:1})
+		}
+
+		function ctaHover(){
+			var Tween=TweenMax.to('.cta_active',0.2,{autoAlpha:1}).pause();
+			$('.content').hover(function(){
+				Tween.play();
+			},function(){
+				Tween.reverse();
+			})
+		}
+		preloadImg();
+		initAnim();
+		ctaHover();
+	</script>
+</body>
+</html>

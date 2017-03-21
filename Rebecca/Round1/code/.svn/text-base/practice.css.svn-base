@@ -1,0 +1,159 @@
+*{
+	padding: 0;
+	margin:0 auto;
+}
+#content{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	-webkit-transform:translate(-50%,-50%);
+	-moz-transform:translate(-50%,-50%);
+	-o-transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+	width: 300px;
+	height: 250px;
+	border: 1px solid #333;
+}
+.first_container{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+}
+.bg{
+	position: absolute;
+	top: -8%;
+	left: -2%;
+	
+}
+.fir_copy{
+	position: relative;
+	left: 15px
+}
+.logo{
+	top: 17px;
+	opacity: 0;
+	visibility: hidden;
+}
+.Capital{
+	top: 9%;
+	transform:translateY(80%);
+	opacity: 0;
+	visibility: hidden;
+}
+.Customer{
+	transform:translateY(80%);
+	top: 6%;
+	opacity: 0;
+	visibility: hidden;
+}
+.sec_copy{
+	position: absolute;
+	left: 14px;
+}
+.let{
+	top: 16%;
+	transform:translateY(80%);
+	opacity: 0;
+	visibility: hidden;
+}
+.family{
+	top: 29%;
+	transform:translateY(80%);
+	opacity: 0;
+	visibility: hidden;
+}
+.final_container{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	// background: url(img/3.jpg) no-repeat;
+	background-color: #0f8ec7;
+	opacity: 0;
+}
+.logo_final{
+	top: 17px;
+	// opacity: 0;
+	// visibility: hidden;
+	position: absolute;
+	left: 15px;
+}
+.final_Capital{
+	top: 18%;
+	transform:translateY(80%);
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	left: 15px;
+}
+.final_Customer{
+	transform:translateY(80%);
+	top: 32%;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	left: 15px;
+}
+.final_copy{
+	position: absolute;
+	left: 16px;
+	transform:translateY(80%);
+	opacity: 0;
+	visibility: hidden;
+}
+.with{
+	top: 49%;
+}
+.to_better{
+	top: 56%;
+}
+.to_keep{
+	top: 62%;
+}
+.cta{
+	position: absolute;
+	bottom: 24%;
+	left: 17px;
+	opacity: 0;
+	visibility: hidden;
+}
+.normal,.active{
+	position: absolute;
+	left:0%;
+	top: 0%;
+	visibility: visible;
+	opacity: 1;
+}
+.active{
+	opacity: 0;
+	visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
