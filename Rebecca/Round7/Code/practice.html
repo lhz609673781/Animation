@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>practice</title>
+	<style type="text/css">
+		html,body{
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			margin: 0 auto;
+		}
+		img{
+			width: 100%;
+		}
+		.content{
+			position: absolute;
+			width: 700px;
+			height: 500px;
+			margin: auto;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			overflow: hidden;
+			background: url(img/bg.jpg) no-repeat;
+			/*background: url(4.jpg) no-repeat;*/
+		}
+		.car{
+			width: 80%;
+			position: absolute;
+			top: 42%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			-webkit-transform: translate(-50%,-50%);
+			-moz-transform: translate(-50%,-50%);
+			-ms-transform: translate(-50%,-50%);
+			-o-transform: translate(-50%,-50%);
+			opacity: 1;
+			visibility: normal;
+		}
+		.wheel{
+			width: 15%;
+			position: absolute;
+			top: 31%;
+			/*opacity:0.5;*/
+		}
+		.ahead{
+			left: 8.5%;
+		}
+		.later{
+			right: 9.2%;
+		}
+		.logo{
+			width: 20%;
+			position: absolute; 
+			right: 0.2%;
+			top: 7%;
+		}
+		.We_copy{
+			position: absolute;
+			width:62%;
+			bottom: 15%;
+			left: 13%;
+			opacity: 1;
+			visibility: normal;
+		}
+		.Meet_copy{
+			position: absolute;
+			width: 66%;
+			bottom: 9.3%;
+			left: 12.5%;
+			opacity: 1;
+			visibility: normal;
+		}
+		.cta{
+			width: 17%;
+			position: absolute; 
+			bottom: 2%;
+			left: 12.8%;
+			cursor: pointer;
+			opacity: 1;
+			visibility: normal;
+		}
+		.active{
+			width: 100%;
+			position: absolute;
+			left: 0%;
+			top: 0%;
+			opacity: 0;
+			visibility: hidden;
+		}
+		.cta_build{
+			width: 18%;
+			left: 32%;
+		}
+		.steering{
+			width: 16%;
+			position: absolute;
+			left: 25.5%;
+			top: -23%;
+			opacity: 1;
+			visibility: normal;
+		}
+		.seat{
+			width: 23%;
+			position: absolute;
+			left: 37%;
+			top: -45.5%;
+			opacity: 1;
+			visibility: normal;
+		}
+		.double_seat{
+			width: 21%;
+			position: absolute;
+			right: 18.5%;
+			top: -26.5%;
+			opacity: 1;
+			visibility: normal;
+		}
+		.module{
+			width: 124%;
+			position: absolute;
+			top: -114%;
+			left: -12%;
+			opacity: 1;
+		}
+		canvas{
+			position: absolute;
+			top: -97px;
+			left: -5px;
+			/*border: 3px solid ;*/
+		}
+		.light{
+			width: 12px;
+			height:100px;
+			position: absolute;
+			left: 10%;
+			/*top: -30%;*/
+			background: #fff;
+			transform: rotate(-30deg);
+			filter: blur(15px);
+			opacity: 1;
+			visibility: normal;
+			border-radius: 15px;
+		}
+		.shell_opa{
+			width: 116%;
+			position: absolute;
+			top: -101px;
+			left: -47px;
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<div class="car preload" data-source='img/car.png'>
+			<div class="ahead wheel preload" data-source='img/wheel.png'></div>
+			<div class="later wheel preload" data-source='img/wheel.png'></div>
+			<div class="steering preload" data-source='img/steering wheel.png'></div>
+			<div class="seat preload" data-source='img/seat.png'></div>
+			<div class="double_seat preload" data-source='img/double seat.png'></div>
+			<div class="module preload" data-source='img/cra module.png'></div>
+			<canvas id="canvas" width="700" height="252"></canvas>
+			<div class="preload shell_opa" data-source='img/shell.png'></div>
+			<!-- <div class="light"></div> -->
+		</div>
+		<div class="logo preload" data-source='img/logo.png'></div>
+		<div class="We_copy preload" data-source='img/WE_copy.png'></div>
+		<div class="Meet_copy preload" data-source='img/Meet_copy.png'></div>
+		<div class="cta">
+			<div class="normal preload" data-source='img/Find Out More CTA.png'></div>
+			<div class="active preload active0" data-source='img/Find Out More CTA _hover.png'></div>
+		</div>
+
+		<div class="cta cta_build">
+			<div class="normal preload" data-source='img/Build Your Own CTA.png'></div>
+			<div class="active preload active1" data-source='img/Build Your Own CTA_hover.png'></div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src='jquery.min.js'></script>
+	<script type="text/javascript" src='TweenMax.min.js'></script>
+	<script type="text/javascript">
+		Math.easeOutCubic = function(e, a, g, f) { 
+			e /= f;
+       		e--;
+        	return g * (e * e * e + 1) + a 
+    	}
+		function preloadPic(){
+			$('.preload').each(function(i,a){
+				var $src=$(a).data('source');
+				if($(a).data('type')=='bg'){
+					$(a).css({'background-image':'url('+$src+')'})
+				}else{
+					var img=$('<img>').attr({
+						'src':$src,
+						'alt':'有一张图片'
+					})
+
+					$(a).append(img);
+				}
+			})
+		}
+
+		function ctaHover(){
+			$('.cta').each(function(i,a){
+				var Tween=TweenMax.to('.active'+i,0.2,{autoAlpha:1}).pause();
+				$(a).hover(function(){
+					Tween.play();
+				},function(){
+					Tween.reverse();
+				})
+			})
+			
+		}
+
+		function animInit(){
+			var tl=new TimelineMax();
+			tl.from('.car',1.5,{x:'60%',autoAlpha:1,z:0.001,ease:Quad.easeOut},'+=0.5')
+			  .to('.wheel>img',1.5,{rotation:'-360deg',rotateZ:0.001,ease:Quad.easeOut},'-=1.5')
+			  .staggerFrom(['.We_copy','.Meet_copy'],1,{x:'20%',autoAlpha:0,z:0.001,ease:Quart.easeOut},0.1,'-=0.2')
+			  .staggerFrom('.cta',0.5,{z:0.001,autoAlpha:0,ease:Cubic.easeIn},0,'-=0.45')
+
+			  .staggerFrom(['.steering','.seat','.double_seat'],0.7,{autoAlpha:0,y:'-50%',ease:Back.easeOut},'0.2','+=0.2')
+			    .from('.module',0.8,{opacity:0,delay:0.15,y:'-10%',ease:Quad.easeOut,onComplete:function(){
+			  		TweenMax.delayedCall(0.15,function(){
+			  			initCanvas();
+			  		})
+			  }})
+			  .from('.light',0.1,{autoAlpha:0,delay:2})
+			  .to('.light',1.3,{left:'100%',y:'-80%',autoAlpha:0})
+		}
+
+      
+     	function initCanvas(){
+	       var canvas=$('canvas');
+	       console.log(canvas);
+	       var context=canvas[0].getContext('2d');
+	       var img=new Image();
+	       var old = 0;
+	       var speed = 10;
+	       img.onload=function(){
+	           var timer = setInterval(function(){
+	            	draw(old,80+old,speed);
+	            	old += speed;
+	            	if(old==300){
+	            		TweenMax.to('.shell_opa',0.5,{opacity:1,ease:Quad.easeIn})
+	            	}
+	            	if(old>650){
+	                	clearInterval(timer);
+	            	}
+	            },20);
+		    }
+	       img.src='img/shell_canvas.png';
+		    function draw(old,length,speed){
+		        for(var i=old;i<length;i++){
+		          if(i<(old+speed)){
+		            context.globalAlpha = 1;
+		          }else{
+		            context.globalAlpha = 1-(1/(length-old-speed))*(i-old);
+		          }
+		          context.clearRect(i-40,0,80,232);
+		          context.drawImage(img,i,0,1,232,i-40,0,1,232);
+		        }
+		    }
+        }
+
+      // function initCanvas(){
+	     //  var canvas=$('canvas');
+	     //  console.log(canvas);
+	     //  var context=canvas[0].getContext('2d');
+	     //  var img=new Image();
+	     //  img.src='img/shell.png';
+	     //  var old = 0;
+	     //  img.onload=function(){
+	     //    var timer = setInterval(function(){
+	     //      draw(old,80+old);
+	     //      old += 10;
+	     //      if(old>575){
+	     //        clearInterval(timer);
+	     //      }
+	     //    },20);
+      // }
+      
+      // function draw(old,length){
+      //   for(var i=old;i<length;i++){
+      //     if(i==old){
+      //       context.globalAlpha = 1;
+      //     }else{
+      //       context.globalAlpha = 1-(1/50)*(i-old-10);
+      //     }
+      //     context.clearRect(i,0,80,232);
+      //     context.drawImage(img,i,0,1,232,i-20,0,1,232);
+      //   }
+      // }
+	     //  }
+    
+		preloadPic();
+		ctaHover();
+		animInit();
+		// initCanvas();
+	</script>
+</body>
+</html>
